@@ -4,16 +4,17 @@
   "private": true,
   "scripts": {
     "assets:sync": "node scripts/sync-assets.mjs",
-    "prebuild": "pnpm assets:sync",
-    "predev": "pnpm assets:sync",
+    "prebuild": "npm run assets:sync",
+    "predev": "npm run assets:sync",
     "build": "next build",
-    "dev": "next dev",
-    "start": "next start",
+    "dev": "next dev -p 3000 -H 0.0.0.0",
+    "start": "next start -p 3000 -H 0.0.0.0",
     "types:check": "next typegen && tsc --noEmit",
     "lint": "oxlint .",
-    "preview": "next start"
+    "preview": "next start -p 3000 -H 0.0.0.0"
   },
   "dependencies": {
+    "@google/genai": "^3.6.1",
     "cnfast": "^0.1.0",
     "fumadocs-core": "16.14.5",
     "fumadocs-mdx": "15.3.0",

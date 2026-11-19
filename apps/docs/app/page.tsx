@@ -1,5 +1,5 @@
-import { permanentRedirect } from 'next/navigation';
+import { MausBotWorkspace } from '@/components/chat/MausBotWorkspace';
 
 export default function HomePage() {
-  permanentRedirect('/docs');
+  return <MausBotWorkspace />;
 }

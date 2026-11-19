@@ -1,0 +1,7 @@
+{
+  "name": "OpenMausBot",
+  "description": "Your own team of AI bots, in a chat app — online multi-bot workspace and documentation.",
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

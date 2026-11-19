@@ -1,22 +1,31 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { JetBrains_Mono, Plus_Jakarta_Sans } from 'next/font/google';
 import { Provider } from '@/components/provider';
 import { appName, siteUrl } from '@/lib/shared';
 import './global.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const sans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-sans',
+});
+
+const mono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: appName,
+    default: `${appName} — Your own team of AI bots, in a chat app`,
     template: `%s · ${appName}`,
   },
-  description: 'MausBot docs: install, configure and extend your local-first team of AI agents. MausBot is free and open source (Apache 2.0).',
+  description:
+    'OpenMausBot online workspace and documentation: talk to specialized AI bots, customize instructions, and build your team.',
   openGraph: {
     title: appName,
     siteName: appName,
-    description: 'Your own team of AI agents, in a chat app.',
+    description: 'Your own team of AI bots, in a chat app.',
     type: 'website',
   },
   icons: {
@@ -27,7 +36,11 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="en" className={inter.className} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${sans.variable} ${mono.variable} font-sans`}
+      suppressHydrationWarning
+    >
       <body className="flex min-h-screen flex-col">
         <Provider>{children}</Provider>
       </body>
